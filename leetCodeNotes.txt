@@ -1,0 +1,103 @@
+Climbing the Stairs(hints): - need a way to save past values for stairs left to save on computation 
+	* ways to do so
+	1. goAhead and use a hash 
+- def a dynamica programming problem.
+BaseCases:
+	if 1 then 1 opt
+	if 2 then 2 opts
+	if 0 then 0 opt
+
+- will recursively add options until the base cases met when breaking down
+
+
+
+Idea 2: use dict lookup
+	the reason we use a seperate function inside is because we need to make sure that that
+	saveAns is accessible to all recursion stacks if we use in the save functions it isn't acesssible
+	as each stack what have a different saveAns will go over the save ans again
+    this is th reas
+
+
+
+class Solution(object):
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        saveAns = {}
+        saveAns[0] = 0
+        saveAns[1] = 1
+        saveAns[2] = 2
+
+        def climb(n):
+            if n in saveAns:
+                return saveAns[n]
+            else: 
+                saveAns[n] = climb(n-1) + climb(n-2)
+                return saveAns[n]
+
+        return climb(n)
+
+Majority Element
+	motes:
+	- The majority element is the element that appears more than �n / 2� times. 
+	You may assume that the majority element always exists in the array.
+
+	solution:
+	- lum throught the nums and count character Freq
+	- if over n/2 then return tha 
+
+class Solution(oclass Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        characterFreq = {}
+        for a in nums:
+            if a in characterFreq:
+                characterFreq[a] = characterFreq[a] + 1
+            else:
+                characterFreq[a] = 1
+            if characterFreq[a] > (len(nums) /2):
+                return abject):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+	characterFreq = {}
+	for a in nums:
+		if a in characterFreq:
+			characterFreq[a] = characterFreq[a] + 1
+		else:
+			characterFreq[a] = 1 
+
+		if characterFreq[a] > (len(nums) /2):
+			return a
+
+Add Binary 
+Ideas
+- start let to right and then carry
+carry = 0
+case one for position starting from the right for both of them
+if both 0 then return 0 
+add carry also if any
+if 1 and 0 0
+1
+if 1 1 0
+cary 
+
+
+
+Diameter of Binary Tree
+    options?
+     -maybe do a depth-first-search
+     -keep track of the nodes
+     -build tree paths/
+Diamter of Binary Tree longest path of left and right
+
+Core Idea is to add the highest of the left annd right + 1
+keeping a global variable that will keep track the highest diameter
+

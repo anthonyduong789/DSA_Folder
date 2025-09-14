@@ -1,0 +1,88 @@
+When to use a dsa
+
+
+
+
+Example of depth-first-search
+
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
+}
+
+def dfs(graph, start, visited=None):
+    if visited is None:
+        visited = set()
+
+    print(start)
+    visited.add(start)
+
+    for neighbor in graph[start]:
+        if neighbor not in visited:
+            dfs(graph, neighbor, visited)
+
+
+dfs(graph, 'A')
+
+
+
+from collections import deque
+
+def bfs(graph, start):
+    visited = set()
+    queue = deque([start])
+
+    while queue:
+        vertex = queue.popleft()
+        if vertex not in visited:
+            print(vertex)
+            visited.add(vertex)
+            queue.extend([neighbor for neighbor in graph[vertex] if neighbor not in visited])
+
+bfs(graph, 'A')
+
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def maxDepth(self, root):
+        """
+        :type root: Optional[TreeNode]
+        :rtype: int
+        """
+        self.maxDepthAmount = 0
+        def search(root):
+            if not root:
+                return 0
+            left = search(root.left)
+            right = search(root.right)
+            
+            currentMostDepthAtNode = max(left, right) + 1
+
+            maxDepthAmount = max(maxDepthAmount, currentMostDepthAtNode)
+            #add plus one for current level at 
+            return currentMostDepthAtNode
+        search(root)
+
+        return maxDepthAmount
+
+^^ above would be right usin self self.maxDepthAmount 
+for all them
+
+Feature | Local Variable | self Variable
+Scope | Only inside one function | Across all methods in the class
+Persists after method? | ❌ No | ✅ Yes
+Shared across calls? | ❌ No | ✅ Yes
+Can be used in nested functions? | ❌ Needs nonlocal | ✅ Works fine as is
+
+
+
