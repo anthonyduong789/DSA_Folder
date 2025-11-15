@@ -4,12 +4,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-
         res = 0 
-
         zeros = 0
         ones = 0
-        # contains the difference from 0 and 1 at index i at the leftmost    element that contains it
+        # contains the difference from 0 and 1 at index i at the leftmost element that contains it
         prefix = {}
 
         for index, num in enumerate(nums):

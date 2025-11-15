@@ -14,6 +14,7 @@ class Solution(object):
             elif nums[i] == 2:
                 swap(i, r)
                 r -= 1
+                i -= 1
 
             i += 1
 
