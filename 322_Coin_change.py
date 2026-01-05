@@ -78,7 +78,6 @@ class Solution(object):
         """
         self.memo = {}
         return self._solve(coins, amount)
-        
     def _solve(self, coins, rem):
         if rem < 0:
             return -1
@@ -96,13 +95,6 @@ class Solution(object):
         
         self.memo[rem] = min_count if min_count != float('inf') else -1
         return self.memo[rem] 
-    
-    
-    
-    
-    
-    
-
     def coinChange(self, coins, amount):
         """
         :type coins: List[int]
@@ -127,7 +119,6 @@ class Solution(object):
         #
         #
         #
-
     def approach3(self, coins, amount):
         # made a mistake making list
         # dp = [[float('inf')] * amount* 1]

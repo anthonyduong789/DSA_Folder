@@ -16,8 +16,6 @@ class Solution(object):
           else:
             ones += 1
           diff = zeros - ones
-          
-          
           if ones == zeros:
             current_length = index + 1
             
