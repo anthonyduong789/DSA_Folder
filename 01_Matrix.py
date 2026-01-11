@@ -36,6 +36,7 @@ class Solution(object):
                     queue.append((i,j))
                     
         directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
         while queue:
             r, c = queue.pop(0)
             

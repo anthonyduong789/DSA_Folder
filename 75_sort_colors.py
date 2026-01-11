@@ -1,5 +1,5 @@
 class Solution(object):
-    def neetCodeSolutions(self, nums: List[int]) -> None:
+    def neetCodeSolutions(self, nums: list[int]) -> None:
         l, r = 0, len(nums) - 1
         i = 0 
         def swap(i, j):

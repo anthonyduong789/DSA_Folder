@@ -10,8 +10,6 @@ class Solution(object):
         # after that we have a 2 sum problem at hand 
         nums.sort()
         res = []
-
-
         for a in range(0, len(nums)):
 
             if a > 0 and nums[a] == nums[a-1]:

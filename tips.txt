@@ -1,11 +1,6 @@
 When to use a dsa
 
-
-
-
 Example of depth-first-search
-
-
 graph = {
     'A': ['B', 'C'],
     'B': ['D', 'E'],
@@ -84,5 +79,31 @@ Persists after method? | ❌ No | ✅ Yes
 Shared across calls? | ❌ No | ✅ Yes
 Can be used in nested functions? | ❌ Needs nonlocal | ✅ Works fine as is
 
+Python Syntax
+List Comprenhension
+[{} for _ in range(9)]
 
+[{} for _ in range(9)]
+
+1. [...] -> These brackets tell Python, "I want the result to be a new list."
+2. {} this is the expression tells what you want to put the list in every "turn"
+3. for _ in ...: This is the Iteration.
+
+The _ (underscore) is a standard Python convention used as a variable name when you don't actually care about the value. You just need a placeholder to satisfy the loop syntax.
+
+range(9): This tells the loop how many times to run. range(9) generates numbers from 0 to 8 (9 total steps).
+
+^ 
+checkBoxes = []
+for _ in range(9):
+    checkBoxes.append({}) # Create a fresh dict and add it to the list
+
+basically just this 
+
+Why we don't just do [] * 9 
+
+* copies the memory address 
+of the dictionary not the list itself
+
+^using the list comprehension instead creates 9 unique objects
 

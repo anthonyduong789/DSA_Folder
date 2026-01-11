@@ -5,11 +5,9 @@ class Solution(object):
 
     def containsDuplicates(self, nums):
         duplicates = set()
-
         for num in nums:
             if duplicates[num]:
                 return True
-
             else:
                 duplicates.add[num]
 

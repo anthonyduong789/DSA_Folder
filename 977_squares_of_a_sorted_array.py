@@ -1,16 +1,11 @@
 import heapq
 from typing import MappingView
 
-
-
 class Solution(object):
     def sortedSquares(self, nums):
         """
         :type nums: List[int]
         :rtype: List[int]
-
-
-
         solution because we know that the the highest possible 
         amount when we square it are at left and the right
         we calc it and add it / change it for values r to left
@@ -22,8 +17,6 @@ class Solution(object):
         # ouput is the same if the we sorted by abosulte value and then squared it
         l = 0
         r = len(nums)
-
-
         res = [0] * len(nums)
         placement = len(nums) - 1
 
