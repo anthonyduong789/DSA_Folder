@@ -47,6 +47,7 @@ class Solution:
             res += w
 
         return res
+
     def decode(self, s: str) -> List[str]:
         if not s:
             return []
